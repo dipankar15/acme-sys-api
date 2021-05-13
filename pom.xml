@@ -9,6 +9,12 @@
 
 	<name>acme-sys-api</name>
 
+<parent>
+	    <groupId>com.mycompany</groupId>
+	    <artifactId>parent-pom</artifactId>
+    	<version>1.0.0-SNAPSHOT</version>
+    </parent>
+
     <properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -34,6 +40,28 @@
 			</plugin>
 		</plugins>
 	</build>
+<profiles>
+			<profile>
+				<id>dev</id>
+              	<properties>
+        			<mule.env>dev</mule.env>
+                    <anypoint.env>DEV</anypoint.env>
+                    <anypoint.target>mulecluster</anypoint.target>
+      			</properties>
+				<build>
+				</build>
+			</profile>
+			<profile>
+				<id>qa</id>
+              	<properties>
+        			<mule.env>uat</mule.env>
+                    <anypoint.env>QA</anypoint.env>
+                    <anypoint.target>viacbs-mule-stage</anypoint.target>
+      			</properties>
+				<build>	
+				</build>
+			</profile>
+	</profiles>
 
 	<dependencies>
         <dependency>
