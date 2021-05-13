@@ -45,7 +45,7 @@
 				<id>dev</id>
               	<properties>
         			<mule.env>dev</mule.env>
-                    <anypoint.env>DEV</anypoint.env>
+                    <anypoint.env>Dev</anypoint.env>
                     <anypoint.target>mulecluster</anypoint.target>
       			</properties>
 				<build>
